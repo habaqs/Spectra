@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Blinker|Quicksand&display=swap');
 @import url('https://meyerweb.com/eric/tools/css/reset/reset.css');
 *{
-    outline: none;  
+    outline: none;
+    outline-width: 0; 
 }
 body{
     background-color: #000;
@@ -68,7 +69,6 @@ section{
 }
 /*Controles */
 .controls{
-    background-color: cornflowerblue;
     display:flex;
     border-top:1px solid rgba(70,70,70,0.2);
     border-radius:2px;
@@ -85,10 +85,15 @@ section{
     color:#000;
     outline: none;
 }
-.controls button:hover{
-    color: rgba(70,70,70,0.8)
+.controls button:hover,
+.controls button:focus{
+    color: rgba(70,70,70,0.8);
+    outline: none;
 }
 
+button::-moz-focus-inner {
+    border: 0;
+  }
 /*Range*/
 input[type=range]{
     -webkit-appearance: none;
