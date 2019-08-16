@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css?family=Blinker|Quicksand&display=swap');
+@import url('https://meyerweb.com/eric/tools/css/reset/reset.css');
+*{
+    outline: none;  
+}
+body{
+    background-color: #000;
+    color: #FFF;
+    /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+    /* font-family: 'Blinker', sans-serif; */
+    font-family: 'Blinker','Quicksand', sans-serif;
+}
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+header img{
+    width: 1024px;
+}
+/*Le conteneur de musique*/
+section{
+    display: flex;
+    flex-flow:row wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    width:90%;
+    margin: 0 auto;
+}
+/*Une musique*/
+.song{
+    position: relative;
+    margin:20px auto;
+    padding:10px;
+    
+    background-color : #FFF;
+    color:#222;
+    
+    border-radius: 10px;
+    
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.song img{
+    width:250px;
+    cursor: pointer;
+}
+/* titres */
+.song-titles{
+    margin-top:10px;
+}
+.song h2,.song h3{
+    margin:0;
+    text-align: center;
+    width:100%;
+
+}
+.song h2{
+    font-weight: bold;
+    font-size: 0.9em;
+}
+.song h3{
+    font-weight: lighter;
+    font-size: 0.8em;
+}
+/*Controles */
+.controls{
+    display:flex;
+    border-top:1px solid rgba(70,70,70,0.2);
+    border-radius:2px;
+    margin-top:10px;
+    margin-bottom: 0;
+    padding: 10px 10px;
+}
+.controls button{
+    background-color: #FFF;
+    border:none;
+    margin-right: 10px;
+    cursor: pointer;
+    color:#000;
+    outline: none;
+}
+.controls button:hover{
+    color: rgba(70,70,70,0.8)
+}
+
+/*Range*/
+input[type=range]{
+    -webkit-appearance: none;
+    border: 1px solid white;
+    overflow: hidden;
+    width:150px;
+}
+/*track Bar*/
+input[type=range]::-moz-range-track{
+    width:100%;
+    height: 5px;
+    background: #222;
+    border: none;
+    border-radius: 3px;
+}
+input[type=range]::-webkit-slider-runnable-track{
+    -webkit-appearance: none;
+    width:100%;
+    height: 5px;
+    background: #222;
+    border: none;
+    border-radius: 3px;
+}
+input[type=range]::-ms-track {
+    width:100%;
+    height: 5px;
+    background: #222;
+    border: none;
+    border-radius: 3px;
+}
+/*track btn*/
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background: goldenrod;
+    margin-top: -2px;
+}
+input[type=range]::-moz-range-thumb {
+    border: none;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background: goldenrod;
+}
+input[type=range]::-ms-thumb {
+    border: none;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background: goldenrod;
+    margin-top:1px;
+}
+/*Track progress */
+/*Pour le moment il n'ya pas de webkit fill lower et upper 
+  j'ai donc décider de laiser la bare de progression comme çà.
+  
+  Salut moi du future : est-ce-que tu peux ajouter le fill lower ou progresse de Webkit
+*/
+input[type="range"]::-moz-range-progress{
+    background-color: cadetblue;
+    height: 5px;
+    border-radius: 10px;
+}
+input[type="range"]::-ms-fill-lower{
+    background-color: cadetblue;
+    border-radius: 10px;
+}
+
+/*  Lien externe    */
+.song a{
+    position: absolute;
+    top: 18px;
+    right:18px;
+    border-radius:64px;
+}
+.song a img{
+    width:44px;
+    filter: drop-shadow(0 0 10px black) ;
+    transition-property: filter;
+    transition-duration: 0.5s;
+    margin: 0 auto;
+}
+.song a img:hover{
+    transition-property: filter;
+    transition-duration: 0.5s;
+    filter: drop-shadow(0 0 10px white) ;
+}
+.song-running{
+    animation: glow 2s linear infinite;
+}
+@keyframes glow{
+    0%{box-shadow: 0 0px 15px 3px cornflowerblue;}
+    50%{box-shadow: 0 0px 15px 3px orange;}
+    100%{box-shadow: 0 0px 15px 3px cornflowerblue;}
+
+}
+
+
+/*Faire défiler du texte 
+.song p{
+    white-space: nowrap;
+    width:100%;
+    text-align: center;
+    animation-delay: 2s;
+    animation: textMove 10s linear infinite;
+}
+@keyframes textMove{
+    0%{transform: translateX(0);}
+    100%{transform: translateX(-120%);}
+}
+*/

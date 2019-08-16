@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="description visible sur les résultat de recherches" />
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/6b63c96dba.js"></script>
+    <script src="script.js"></script>
+    <title>Spectra - Production</title>
+</head>
+
+<body>
+    <header>
+        <img src="img/banner.jpg">
+    </header>
+    <section>
+        <div class="js-m m-01 song ">
+            <img src="img/audio/3T.jpg" onclick="playpause('m-01')">
+            <div class="song-titles">
+                <h2>SEÑORITA</h2>
+                <h3>Soolking x Gims x Cardi B</h3>
+            </div>
+            <div class="controls">
+                <button onclick="playpause('m-01')" id="btn-m-01"><i class="fa fa-play" aria-hidden="true"></i></button>
+                <input type="range" min="0" max="1" step="0.01">
+            </div>
+            <audio id="m-01" class="audio">
+                <source src="audio/3T.mp3" type="audio/mp3">
+            </audio>
+            <a href=""><img src="img/logo/youtube_rond.png"></a>
+        </div>
+        <div class="js-m m-02 song">
+                <img src="img/audio/BALL.jpg" onclick="playpause('m-02')">
+                <div class="song-titles">
+                    <h2>SEÑORITA</h2>
+                    <h3>Soolking x Gims x Cardi B</h3>
+                </div>
+                <div class="controls">
+                    <button onclick="playpause('m-02')" id="btn-m-02"><i class="fa fa-play" aria-hidden="true"></i></button>
+                    <input type="range" max="1" min="0" step="0.01">
+                </div>
+                <audio id="m-02" class="audio">
+                    <source src="audio/BALL.mp3" type="audio/mp3">
+                </audio>
+                <a href=""><img src="img/logo/youtube_rond.png"></a>
+            </div>
+    </section>
+    <footer>
+        <div class="Contact">
+            <a href="">
+                <img src="">
+                <!--Youtube-->
+            </a>
+            <a href="">
+                <img src="">
+                <!--Instagram-->
+            </a>
+            <a href="">
+                <img src="">
+                <!--Twitter-->
+            </a>
+            <p>SpectraProduction@gmail.com</p>
+        </div>
+        <a href="">Webdesign par Habacuc Emile</a>
+    </footer>
+</body>
+
+</html>
