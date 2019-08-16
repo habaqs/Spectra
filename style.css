@@ -68,13 +68,15 @@ section{
 }
 /*Controles */
 .controls{
+    background-color: cornflowerblue;
     display:flex;
     border-top:1px solid rgba(70,70,70,0.2);
     border-radius:2px;
     margin-top:10px;
     margin-bottom: 0;
-    padding: 10px 10px;
+    padding: 10px 10px 0px;
 }
+/*Play pause button*/
 .controls button{
     background-color: #FFF;
     border:none;
@@ -149,12 +151,12 @@ input[type=range]::-ms-thumb {
   Salut moi du future : est-ce-que tu peux ajouter le fill lower ou progresse de Webkit
 */
 input[type="range"]::-moz-range-progress{
-    background-color: cadetblue;
+    background-color: cornflowerblue;
     height: 5px;
     border-radius: 10px;
 }
 input[type="range"]::-ms-fill-lower{
-    background-color: cadetblue;
+    background-color: cornflowerblue;
     border-radius: 10px;
 }
 

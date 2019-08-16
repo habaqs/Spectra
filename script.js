@@ -5,6 +5,8 @@ function init(){
 var songs = document.getElementsByTagName('audio');
 for (let i = 0; i < songs.length; i++) {
     var elem = songs[i];
+    elem.addEventListener('timeupdate',rangeUpdate,elem);
+    console.log("timeupdate seted");
     console.log('mon id :'+elem.id);
 }
 console.log("end init", songs);
@@ -24,7 +26,7 @@ function playpause(song){
     /*Song bar*/
     var selctBar = contSong+' input[type="range"';
     var songBar= document.querySelector(selctBar);
-    console.log(song,btn,musique,songBar);
+   /* console.log(song,btn,musique,songBar);*/
     
     if(musique.paused){
         musique.play();
@@ -34,7 +36,7 @@ function playpause(song){
         musique.pause();
         btn.innerHTML='<i class="fa fa-play" aria-hidden="true"></i>';
         song.classList.remove('song-running');
-    }
+    }/*
     musique.addEventListener('timeupdate',function(e){
         console.log("in : ",Math.round((this.currentTime/this.duration)*100)/100);
         songBar.setAttribute('value',Math.round((this.currentTime/this.duration)*100)/100);
@@ -44,19 +46,28 @@ function playpause(song){
             song.classList.remove('song-running');
         }
         console.log(songBar)
-    });
-    // musique.on('timeupdate',function(){
-    //     songBar.setAttribute('value',this.currentTime/this.duration);
-    // });
-    // $('#player').on('timeupdate', function() {
-    //     $('#seekbar').attr("value", this.currentTime / this.duration);
-    // });
+    });*/
 }
 
-function restart(song){
-    var musique = document.getElementById(song);
-    musique.currentTime = 0;
-    if(musique.paused){
-        playpause(song);
-    }
+/**
+ * Cette fonction met à jour la position du temps d'un audio
+ * @param {*} obj c'est le range  
+ * @param {string} song c'est l'id du song
+ * exemple : change(this,"m-01")
+ */
+function change(obj,song){
+    var audioBtn = '#'+song;
+    var musique = document.querySelector(audioBtn);
+    musique.currentTime=musique.duration*obj.value;
+}
+/**
+ * Cette fonction mes à jour la valeur de l'input de type range 
+ * @param {*} audio (l'élément doit avoir un id)
+ */
+function rangeUpdate(audio){
+    audio=audio.target;
+    var rangeBar = document.querySelector('.'+audio.id +' input[type="range"]');
+    rangeBar.removeAttribute('value');
+    rangeBar.setAttribute('value',String((this.currentTime/this.duration)*100)/100);
+    console.log(audio.currentTime, rangeBar);
 }
