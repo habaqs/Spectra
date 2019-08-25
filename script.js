@@ -1,73 +1,59 @@
-setTimeout(init,1000);
-function init(){
-    console.log("start init");
-/* all musique*/
-var songs = document.getElementsByTagName('audio');
-for (let i = 0; i < songs.length; i++) {
-    var elem = songs[i];
-    elem.addEventListener('timeupdate',rangeUpdate,elem);
-    console.log("timeupdate seted");
-    console.log('mon id :'+elem.id);
-}
-console.log("end init", songs);
-}
+/*   Init   */
+document.querySelectorAll('.son audio').forEach(function (e) {
+    e.addEventListener('timeupdate', syncSon, this);
+    e.addEventListener('ended',finZic,this);
+});
+document.querySelectorAll('.son input[type="range"]').forEach(function (e) {
+    e.addEventListener('change', updateSon, this);
+});
+document.querySelectorAll('.son').forEach(function(e){
+    e.addEventListener('onmouseover',mouseSon,this);
+    console.log(e);
+    var id = e.id;
+    document.querySelector('#'+id+' img').addEventListener('onmouseover',mouseSon,id);
+    console.log("Mouse Over add");
+})
 
-/*play pause*/
-function playpause(song){
-    /*btn play pause*/
-    var idBtn= '#btn-'+song;
-    var btn = document.querySelector(idBtn);
-    /*audio*/
-    var audioBtn = '#'+song;
-    var musique = document.querySelector(audioBtn);
-    /*Song Conteneur*/
-    var contSong = '.'+song;
-    var song = document.querySelector(contSong);
-    /*Song bar*/
-    var selctBar = contSong+' input[type="range"';
-    var songBar= document.querySelector(selctBar);
-   /* console.log(song,btn,musique,songBar);*/
-    
-    if(musique.paused){
-        musique.play();
-        btn.innerHTML='<i class="fa fa-pause" aria-hidden="true"></i>';
-        song.classList.add('song-running');
-    }else{
-        musique.pause();
-        btn.innerHTML='<i class="fa fa-play" aria-hidden="true"></i>';
-        song.classList.remove('song-running');
-    }/*
-    musique.addEventListener('timeupdate',function(e){
-        console.log("in : ",Math.round((this.currentTime/this.duration)*100)/100);
-        songBar.setAttribute('value',Math.round((this.currentTime/this.duration)*100)/100);
-        if((this.currentTime/this.duration)==1){
-            this.currentTime="0";
-            btn.innerHTML='<i class="fa fa-play" aria-hidden="true"></i>';
-            song.classList.remove('song-running');
-        }
-        console.log(songBar)
-    });*/
+function syncSon(audio) {
+    var audio = audio.target;
+    var range = document.querySelector('#' + audio.id.replace('a', 'd') + ' input[type="range"]');
+    range.value = audio.currentTime / audio.duration;
 }
-
-/**
- * Cette fonction met à jour la position du temps d'un audio
- * @param {*} obj c'est le range  
- * @param {string} song c'est l'id du song
- * exemple : change(this,"m-01")
- */
-function change(obj,song){
-    var audioBtn = '#'+song;
-    var musique = document.querySelector(audioBtn);
-    musique.currentTime=musique.duration*obj.value;
+function finZic(audio){
+    var audio = audio.target;
+    var son = document.querySelector('#'+audio.id.replace('a','d'));
+    var btn = document.querySelector('#'+audio.id.replace('a','d')+' button');
+    son.classList.remove('son-running');
+    btn.innerHTML = '<i class="fa fa-play" aria-hidden="true"></i>';
+}
+function updateSon(range) {
+    var range = range.target;
+    var audio = document.querySelector('#' + range.id.replace('r', 'd') + ' audio');
+    audio.currentTime = audio.duration * range.value;
+}
+function mouseSon(div){
+    console.log("mouseOver");
+    // console.log("style chage for",div)
+    // div = div.target;
+    // document.querySelector('#'+div.id+' .bar-Titre').style.display="initial";
+    // document.querySelector('#'+div.id+' .bar-controle').style.display="flex";
 }
 /**
- * Cette fonction mes à jour la valeur de l'input de type range 
- * @param {*} audio (l'élément doit avoir un id)
+ * Met play ou pause l'audio envoyer en paramettre fonction de la musique
+ * @param {*} son ex:'a-01'
  */
-function rangeUpdate(audio){
-    audio=audio.target;
-    var rangeBar = document.querySelector('.'+audio.id +' input[type="range"]');
-    rangeBar.removeAttribute('value');
-    rangeBar.setAttribute('value',String((this.currentTime/this.duration)*100)/100);
-    console.log(audio.currentTime, rangeBar);
+function playPause(son) {
+    var audioElem = document.querySelector('#' + son);
+    var sonElem = document.querySelector('#' + son.replace('a', 'd'));
+
+    if (audioElem.paused) {
+        audioElem.play();
+        document.querySelector('#' + sonElem.id + ' button').innerHTML = '<i class="fa fa-pause" aria-hidden="true"></i>';
+        sonElem.classList.add('son-running');
+    } else {
+        audioElem.pause();
+        document.querySelector('#' + sonElem.id + ' button').innerHTML = '<i class="fa fa-play" aria-hidden="true"></i>';
+        sonElem.classList.remove('son-running');
+    }
 }
+

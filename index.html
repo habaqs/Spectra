@@ -6,7 +6,6 @@
     <meta name="description" content="description visible sur les résultat de recherches" />
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/6b63c96dba.js"></script>
-    <script src="script.js"></script>
     <title>Spectra - Production</title>
 </head>
 
@@ -16,147 +15,67 @@
     </header>
     <section>
         <!--3T-->
-        <div class="js-m m-01 song ">
-            <img src="img/audio/3T.jpg" onclick="playpause('m-01')">
-            <div class="song-titles">
+        <div class="son" id='d-01'>
+            <img src="img/audio/3T.jpg">
+            <div class="bar-Titre">
                 <h2>3T</h2>
-                <h3>Soolking x Gims x Cardi B</h3>
+                <h3>Lecteur créer par Habacuc Emile</h3>
             </div>
-            <div class="controls">
-                <button onclick="playpause('m-01')" id="btn-m-01"><i class="fa fa-play" aria-hidden="true"></i></button>
-                <input type="range" min="0" max="1" step="0.001" disabled>
-            </div>
-            <audio id="m-01" class="audio">
+            <audio id="a-01">
                 <source src="audio/3T.mp3" type="audio/mp3">
             </audio>
+            <div class="bar-controle">
+                <button onclick="playPause('a-01')"><i class="fa fa-play" aria-hidden="true"></i></button>
+                <input id='r-01' type="range" min="0" max="1" step="0.0001" value="0">
+            </div>
             <a href=""><img src="img/logo/youtube_rond.png"></a>
         </div>
         <!--BALL-->
-        <div class="js-m m-02 song ">
-            <img src="img/audio/BALL.jpg" onclick="playpause('m-02')">
-            <div class="song-titles">
+        <div class="son" id='d-02'>
+            <img src="img/audio/BALL.jpg">
+            <div class="bar-Titre">
                 <h2>BALL</h2>
-                <h3>Soolking x Gims x Cardi B</h3>
+                <h3>Lecteur créer par Habacuc Emile</h3>
             </div>
-            <div class="controls">
-                <button onclick="playpause('m-02')" id="btn-m-02"><i class="fa fa-play" aria-hidden="true"></i></button>
-                <input type="range" min="0" max="1" step="0.001" disabled>
-            </div>
-            <audio id="m-02" class="audio">
+            <audio id="a-02">
                 <source src="audio/BALL.mp3" type="audio/mp3">
             </audio>
+            <div class="bar-controle">
+                <button onclick="playPause('a-02')"><i class="fa fa-play" aria-hidden="true"></i></button>
+                <input id='r-02' type="range" min="0" max="1" step="0.0001" value="0">
+            </div>
             <a href=""><img src="img/logo/youtube_rond.png"></a>
         </div>
         <!--CAPSULE-->
-        <div class="js-m m-03 song ">
-            <img src="img/audio/Capsule.jpg" onclick="playpause('m-03')">
-            <div class="song-titles">
+        <div class="son" id='d-03'>
+            <img src="img/audio/Capsule.jpg">
+            <div class="bar-Titre">
                 <h2>CAPSULE</h2>
-                <h3>Soolking x Gims x Cardi B</h3>
+                <h3>Soolking x Cardi B</h3>
             </div>
-            <div class="controls">
-                <button onclick="playpause('m-03')" id="btn-m-03"><i class="fa fa-play" aria-hidden="true"></i></button>
-                <input type="range" min="0" max="1" step="0.001" disabled>
-            </div>
-            <audio id="m-03" class="audio">
+            <audio id="a-03">
                 <source src="audio/CAPSULE.mp3" type="audio/mp3">
             </audio>
+            <div class="bar-controle">
+                <button onclick="playPause('a-03')"><i class="fa fa-play" aria-hidden="true"></i></button>
+                <input id='r-03' type="range" min="0" max="1" step="0.0001" value="0">
+            </div>
             <a href=""><img src="img/logo/youtube_rond.png"></a>
         </div>
         <!--FURIOUS-->
-        <div class="js-m m-04 song ">
-            <img src="img/audio/Furious.jpg" onclick="playpause('m-04')">
-            <div class="song-titles">
+        <div class="son" id='d-04'>
+            <img src="img/audio/Furious.jpg">
+            <div class="bar-Titre">
                 <h2>FURIOUS</h2>
                 <h3>Soolking x Cardi B</h3>
             </div>
-            <div class="controls">
-                <button onclick="playpause('m-04')" id="btn-m-04"><i class="fa fa-play" aria-hidden="true"></i></button>
-                <input type="range" min="0" max="1" step="0.001" disabled>
-            </div>
-            <audio id="m-04" class="audio">
+            <audio id="a-04">
                 <source src="audio/FURIOUS.mp3" type="audio/mp3">
             </audio>
-            <a href=""><img src="img/logo/youtube_rond.png"></a>
-        </div>
-        <!--JUMP-->
-        <div class="js-m m-05 song ">
-            <img src="img/audio/JUMP.jpg" onclick="playpause('m-05')">
-            <div class="song-titles">
-                <h2>JUMP</h2>
-                <h3>Soolking x Gims x Cardi B</h3>
+            <div class="bar-controle">
+                <button onclick="playPause('a-04')"><i class="fa fa-play" aria-hidden="true"></i></button>
+                <input id='r-04' type="range" min="0" max="1" step="0.0001" value="0">
             </div>
-            <div class="controls">
-                <button onclick="playpause('m-05')" id="btn-m-05"><i class="fa fa-play" aria-hidden="true"></i></button>
-                <input type="range" min="0" max="1" step="0.001" disabled>
-            </div>
-            <audio id="m-05" class="audio">
-                <source src="audio/JUMP.mp3" type="audio/mp3">
-            </audio>
-            <a href=""><img src="img/logo/youtube_rond.png"></a>
-        </div>
-        <!--MIEL-->
-        <div class="js-m m-06 song ">
-            <img src="img/audio/Miel.jpg" onclick="playpause('m-06')">
-            <div class="song-titles">
-                <h2>MIEL</h2>
-                <h3>Gims x Cardi B</h3>
-            </div>
-            <div class="controls">
-                <button onclick="playpause('m-06')" id="btn-m-06"><i class="fa fa-play" aria-hidden="true"></i></button>
-                <input type="range" min="0" max="1" step="0.001" disabled>
-            </div>
-            <audio id="m-06" class="audio">
-                <source src="audio/MIEL.mp3" type="audio/mp3">
-            </audio>
-            <a href=""><img src="img/logo/youtube_rond.png"></a>
-        </div>
-        <!--PEUF-->
-        <div class="js-m m-07 song ">
-            <img src="img/audio/PEUF.jpg" onclick="playpause('m-07')">
-            <div class="song-titles">
-                <h2>PEUF</h2>
-                <h3>Soolking x Gims x Cardi B</h3>
-            </div>
-            <div class="controls">
-                <button onclick="playpause('m-07')" id="btn-m-07"><i class="fa fa-play" aria-hidden="true"></i></button>
-                <input type="range" min="0" max="1" step="0.001" disabled>
-            </div>
-            <audio id="m-07" class="audio">
-                <source src="audio/PEUF.mp3" type="audio/mp3">
-            </audio>
-            <a href=""><img src="img/logo/youtube_rond.png"></a>
-        </div>
-        <!--REVES-->
-        <div class="js-m m-08 song ">
-            <img src="img/audio/Reves.jpg" onclick="playpause('m-08')">
-            <div class="song-titles">
-                <h2>REVES</h2>
-                <h3>Cardi B</h3>
-            </div>
-            <div class="controls">
-                <button onclick="playpause('m-08')" id="btn-m-08"><i class="fa fa-play" aria-hidden="true"></i></button>
-                <input type="range" min="0" max="1" step="0.001" disabled>
-            </div>
-            <audio id="m-08" class="audio">
-                <source src="audio/Reves.mp3" type="audio/mp3">
-            </audio>
-            <a href=""><img src="img/logo/youtube_rond.png"></a>
-        </div>
-        <!--SPY-->
-        <div class="js-m m-09 song ">
-            <img src="img/audio/SPY.jpg" onclick="playpause('m-09')">
-            <div class="song-titles">
-                <h2>SEÑORITA</h2>
-                <h3>Soolking x Gims x Cardi B</h3>
-            </div>
-            <div class="controls">
-                <button onclick="playpause('m-09')" id="btn-m-09"><i class="fa fa-play" aria-hidden="true"></i></button>
-                <input type="range" min="0" max="1" step="0.001" disabled>
-            </div>
-            <audio id="m-09" class="audio">
-                <source src="audio/SPY.mp3" type="audio/mp3">
-            </audio>
             <a href=""><img src="img/logo/youtube_rond.png"></a>
         </div>
     </section>
@@ -178,6 +97,7 @@
         </div>
         <a href="">Webdesign par Habacuc Emile</a>
     </footer>
+    <script src="script.js"></script>
 </body>
 
 </html>
