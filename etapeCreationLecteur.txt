@@ -1,0 +1,9 @@
+Controle personaliser les controles
+1) Supprimer l'attribut controle de l'html
+2) donner un id différent à chaque audio
+3) créer une div class/id = controle (çà nous servira à sélectionner les éléments audio)
+4) créer chaque boutton
+5) Utiliser un input type="range" pour la bar de progression
+6) créer les fonction associé à chaque boutton
+7) synchroniser l'input type="range" avec la musique en cour de lecture
+8) Modifier l'état d'avencement en fonction de la range quand l'utilisateur modifie cette valeur 
