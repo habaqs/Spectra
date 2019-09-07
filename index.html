@@ -13,71 +13,8 @@
     <header>
         <img src="img/banner.jpg">
     </header>
-    <section>
-        <!--3T-->
-        <div class="son" id='d-01'>
-            <img src="img/audio/3T.jpg">
-            <div class="bar-Titre">
-                <h2>3T</h2>
-                <h3>Lecteur créer par Habacuc Emile</h3>
-            </div>
-            <audio id="a-01">
-                <source src="audio/3T.mp3" type="audio/mp3">
-            </audio>
-            <div class="bar-controle">
-                <button onclick="playPause('a-01')"><i class="fa fa-play" aria-hidden="true"></i></button>
-                <input id='r-01' type="range" min="0" max="1" step="0.0001" value="0">
-            </div>
-            <a href=""><img src="img/logo/youtube_rond.png"></a>
-        </div>
-        <!--BALL-->
-        <div class="son" id='d-02'>
-            <img src="img/audio/BALL.jpg">
-            <div class="bar-Titre">
-                <h2>BALL</h2>
-                <h3>Lecteur créer par Habacuc Emile</h3>
-            </div>
-            <audio id="a-02">
-                <source src="audio/BALL.mp3" type="audio/mp3">
-            </audio>
-            <div class="bar-controle">
-                <button onclick="playPause('a-02')"><i class="fa fa-play" aria-hidden="true"></i></button>
-                <input id='r-02' type="range" min="0" max="1" step="0.0001" value="0">
-            </div>
-            <a href=""><img src="img/logo/youtube_rond.png"></a>
-        </div>
-        <!--CAPSULE-->
-        <div class="son" id='d-03'>
-            <img src="img/audio/Capsule.jpg">
-            <div class="bar-Titre">
-                <h2>CAPSULE</h2>
-                <h3>Soolking x Cardi B</h3>
-            </div>
-            <audio id="a-03">
-                <source src="audio/CAPSULE.mp3" type="audio/mp3">
-            </audio>
-            <div class="bar-controle">
-                <button onclick="playPause('a-03')"><i class="fa fa-play" aria-hidden="true"></i></button>
-                <input id='r-03' type="range" min="0" max="1" step="0.0001" value="0">
-            </div>
-            <a href=""><img src="img/logo/youtube_rond.png"></a>
-        </div>
-        <!--FURIOUS-->
-        <div class="son" id='d-04'>
-            <img src="img/audio/Furious.jpg">
-            <div class="bar-Titre">
-                <h2>FURIOUS</h2>
-                <h3>Soolking x Cardi B</h3>
-            </div>
-            <audio id="a-04">
-                <source src="audio/FURIOUS.mp3" type="audio/mp3">
-            </audio>
-            <div class="bar-controle">
-                <button onclick="playPause('a-04')"><i class="fa fa-play" aria-hidden="true"></i></button>
-                <input id='r-04' type="range" min="0" max="1" step="0.0001" value="0">
-            </div>
-            <a href=""><img src="img/logo/youtube_rond.png"></a>
-        </div>
+    <section id='sonContainer'>
+        <!--C'est ici que les musiques son ajouter-->
     </section>
     <footer>
         <div class="Contact">
@@ -98,6 +35,7 @@
         <a href="">Webdesign par Habacuc Emile</a>
     </footer>
     <script src="script.js"></script>
+    <!--<script src="json.js"></script>-->
 </body>
 
 </html>

@@ -1,30 +1,74 @@
 {
     "0":{
+        "id":0,
         "nom":"3T",
-        "description":"",
-        "image":"img/audio/3T.jpg",
-        "audioSource":"audio/3T.mp3",
+        "description":"Lecteur Créer par habacuc",
+        "image":"/img/audio/3T.jpg",
+        "audio":"audio/3T.mp3",
         "video":""
     },
     "1":{
+        "id":1,
         "nom":"BALL",
+        "description":"Mdr T qui toi",
+        "image":"/img/audio/BALL.jpg",
+        "audio":"/audio/BALL.mp3",
+        "video":""
+    },
+    "2":{
+        "id":2,
+        "nom":"CAPSULE",
         "description":"",
-        "image":"img/audio/BALL.jpg",
-        "audioSource":"audio/BALL.mp3",
+        "image":"/img/audio/Capsule.jpg",
+        "audio":"/audio/CAPSULE.mp3",
         "video":""
     },
     "3":{
-        "nom":"CAPSULE",
+        "id":3,
+        "nom":"FURIOUS",
         "description":"",
-        "image":"img/audio/Capsule.jpg",
-        "audioSource":"audio/CAPSULE.mp3",
+        "image":"/img/audio/Furious.jpg",
+        "audio":"/audio/FURIOUS.mp3",
         "video":""
     },
     "4":{
-        "nom":"FURIOUS",
+        "id":4,
+        "nom":"JUMP",
         "description":"",
-        "image":"img/audio/Furious.jpg",
-        "audioSource":"audio/FURIOUS.mp3",
+        "image":"/img/audio/JUMP.jpg",
+        "audio":"/audio/JUMP.mp3",
+        "video":""
+    },
+    "5":{
+        "id":5,
+        "nom":"MIEL",
+        "description":"",
+        "image":"/img/audio/Miel.jpg",
+        "audio":"/audio/MIEL.mp3",
+        "video":""
+    },
+    "6":{
+        "id":6,
+        "nom":"PEUF",
+        "description":"",
+        "image":"/img/audio/PEUF.jpg",
+        "audio":"/audio/PEUF.mp3",
+        "video":""
+    },
+    "7":{
+        "id":7,
+        "nom":"REVES",
+        "description":"",
+        "image":"/img/audio/Reves.jpg",
+        "audio":"/audio/Reves.mp3",
+        "video":""
+    },
+    "8":{
+        "id":8,
+        "nom":"SPY",
+        "description":"",
+        "image":"/img/audio/SPY.jpg",
+        "audio":"/audio/SPY.mp3",
         "video":""
     }
 }

@@ -1,19 +1,20 @@
-/*   Init   */
-document.querySelectorAll('.son audio').forEach(function (e) {
-    e.addEventListener('timeupdate', syncSon, this);
-    e.addEventListener('ended',finZic,this);
-});
-document.querySelectorAll('.son input[type="range"]').forEach(function (e) {
-    e.addEventListener('change', updateSon, this);
-});
-document.querySelectorAll('.son').forEach(function(e){
-    e.addEventListener('onmouseover',mouseSon,this);
-    console.log(e);
-    var id = e.id;
-    document.querySelector('#'+id+' img').addEventListener('onmouseover',mouseSon,id);
-    console.log("Mouse Over add");
-})
-
+myjson();
+function init(){
+    document.querySelectorAll('.son audio').forEach(function (e) {
+        e.addEventListener('timeupdate', syncSon, this);
+        e.addEventListener('ended',finZic,this);
+    });
+    document.querySelectorAll('.son input[type="range"]').forEach(function (e) {
+        e.addEventListener('change', updateSon, this);
+    });
+    document.querySelectorAll('.son').forEach(function(e){
+        e.addEventListener('onmouseover',mouseSon,this);
+        console.log(e);
+        var id = e.id;
+        document.querySelector('#'+id+' img').addEventListener('onmouseover',mouseSon,id);
+        console.log("Mouse Over add");
+    });
+}
 function syncSon(audio) {
     var audio = audio.target;
     var range = document.querySelector('#' + audio.id.replace('a', 'd') + ' input[type="range"]');
@@ -57,3 +58,35 @@ function playPause(son) {
     }
 }
 
+function myjson(){
+    console.log("btn fonctionnel");
+    let xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function (){
+        if(xhr.readyState == 4 && xhr.status == 200){
+            console.log("Yes");
+            afficherMusiques(xhr.response);
+        }
+    }
+    xhr.open('GET','song.json',true);
+    xhr.responseType = 'json';
+    xhr.send();
+}
+function afficherMusiques(songs){
+    console.log(getObjLength(songs));
+    for(let i = 0;i<getObjLength(songs);i++){
+        afficherMusique(songs[i]);
+    }
+    init();
+}
+function afficherMusique(son){
+    let section = document.querySelector('#sonContainer');
+    let sonHTML = '<!--'+son.nom+'--> <div class="son" id=\'d-'+son.id+'\'> <img src="'+son.image+'"> <div class="bar-Titre"> <h2>'+son.nom+'</h2> <h3>'+son.description+'</h3> </div> <audio id="a-'+son.id+'"> <source src="'+son.audio+'" type="audio/mp3"> </audio> <div class="bar-controle"> <button onclick="playPause(\'a-'+son.id+'\')"><i class="fa fa-play" aria-hidden="true"></i></button> <input id=\'r-'+son.id+'\' type="range" min="0" max="1" step="0.0001" value="0"> </div> <a href="'+son.video+'"><img src="img/logo/youtube_rond.png"></a> </div></div>';
+    section.innerHTML +=sonHTML;
+}
+function getObjLength(obj){
+    let long =-1;
+    for(let i = 0;obj[i]!=undefined;i++){
+        long = i;
+    }
+    return long;
+}
