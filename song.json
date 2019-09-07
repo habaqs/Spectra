@@ -4,7 +4,7 @@
         "nom":"3T",
         "description":"Lecteur Créer par habacuc",
         "image":"/img/audio/3T.jpg",
-        "audio":"audio/3T.mp3",
+        "audio":"/audio/3T.mp3",
         "video":""
     },
     "1":{
